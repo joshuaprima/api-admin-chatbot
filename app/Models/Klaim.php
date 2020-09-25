@@ -12,5 +12,5 @@ class Klaim extends Model
     protected $table = 'klaim';
     protected $primaryKey = "klaimID";
 
-    protected $fillable = ['NIK', 'KPJ', 'namaIbu'];
+    protected $fillable = ['NIK', 'KPJ', 'namaIbu', 'status'];
 }

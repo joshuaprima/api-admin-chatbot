@@ -17,3 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('klaim-nik', 'App\Http\Controllers\Api\KlaimController@cekNIK');
+Route::get('klaim-kpj', 'App\Http\Controllers\Api\KlaimController@cekKPJ');
+Route::get('klaim-status', 'App\Http\Controllers\Api\KlaimController@cekIbu');

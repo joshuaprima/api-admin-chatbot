@@ -18,6 +18,7 @@ class CreateKlaimTable extends Migration
             $table->string('NIK');
             $table->string('KPJ');
             $table->string('namaIbu');
+            $table->string('status');
             $table->timestamps();
         });
     }

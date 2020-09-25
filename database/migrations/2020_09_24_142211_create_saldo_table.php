@@ -18,6 +18,7 @@ class CreateSaldoTable extends Migration
             $table->string('NIK');
             $table->string('KPJ');
             $table->string('namaIbu');
+            $table->integer('nilaiSaldo');
             $table->timestamps();
         });
     }
