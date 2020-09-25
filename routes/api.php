@@ -31,3 +31,5 @@ Route::post('kritik', 'App\Http\Controllers\Api\KritikController@postIsi');
 Route::post('testimoni', 'App\Http\Controllers\Api\TestimoniController@postIsi');
 Route::post('perusahaanbt', 'App\Http\Controllers\Api\PerusahaanbtController@postData');
 Route::post('tenagakerjabt', 'App\Http\Controllers\Api\TenagakerjabtController@postData');
+Route::post('ketidaksesuaian', 'App\Http\Controllers\Api\KetidaksesuaianController@postData');
+Route::post('sipp', 'App\Http\Controllers\Api\SippController@postData');
