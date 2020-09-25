@@ -33,3 +33,7 @@ Route::post('perusahaanbt', 'App\Http\Controllers\Api\PerusahaanbtController@pos
 Route::post('tenagakerjabt', 'App\Http\Controllers\Api\TenagakerjabtController@postData');
 Route::post('ketidaksesuaian', 'App\Http\Controllers\Api\KetidaksesuaianController@postData');
 Route::post('sipp', 'App\Http\Controllers\Api\SippController@postData');
+Route::get('akun-nik', 'App\Http\Controllers\Api\AkunController@cekNIK');
+Route::get('akun-kpj', 'App\Http\Controllers\Api\AkunController@cekKPJ');
+Route::get('akun-ibu', 'App\Http\Controllers\Api\AkunController@cekIbu');
+Route::get('akun-verif', 'App\Http\Controllers\Api\AkunController@cekEmail');
