@@ -21,3 +21,9 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::get('klaim-nik', 'App\Http\Controllers\Api\KlaimController@cekNIK');
 Route::get('klaim-kpj', 'App\Http\Controllers\Api\KlaimController@cekKPJ');
 Route::get('klaim-status', 'App\Http\Controllers\Api\KlaimController@cekIbu');
+Route::get('kepesertaan-nik', 'App\Http\Controllers\Api\KepesertaanController@cekNIK');
+Route::get('kepesertaan-kpj', 'App\Http\Controllers\Api\KepesertaanController@cekKPJ');
+Route::get('kepesertaan-status', 'App\Http\Controllers\Api\KepesertaanController@cekIbu');
+Route::get('saldo-nik', 'App\Http\Controllers\Api\SaldoController@cekNIK');
+Route::get('saldo-kpj', 'App\Http\Controllers\Api\SaldoController@cekKPJ');
+Route::get('saldo-nilai', 'App\Http\Controllers\Api\SaldoController@cekIbu');
