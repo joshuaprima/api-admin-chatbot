@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Models\Klaim;
+use App\Models\Tenagakerja;
 use Illuminate\Http\Request;
 use Validator;
 
@@ -11,13 +11,13 @@ class KlaimController extends Controller
 {
     public function cekNIK(Request $request){
         $this->validate($request,[
-            'NIK' => 'required|string',
+            'nik_tk' => 'required|string',
         ]);
 
-        if(Klaim::where('NIK', $request->NIK)->first() != null){
+        if(Tenagakerja::where('nik_tk', $request->nik_tk)->first() != null){
             return response()->json([
                 'message' => 'NIK terdaftar.',
-                'nik' => $request->NIK
+                'nik' => $request->nik_tk
             ], 201);
         }else{
             return response()->json([
@@ -28,15 +28,15 @@ class KlaimController extends Controller
 
     public function cekKPJ(Request $request){
         $this->validate($request,[
-            'NIK' => 'required|string',
-            'KPJ' => 'required|string',
+            'nik_tk' => 'required|string',
+            'no_kpj' => 'required|string',
         ]);
 
-        if(Klaim::where([['KPJ', $request->KPJ], ['NIK', $request->NIK]])->first() != null){
+        if(Tenagakerja::where([['no_kpj', $request->no_kpj], ['nik_tk', $request->nik_tk]])->first() != null){
             return response()->json([
-                'message' => 'NIK terdaftar.',
-                'nik' => $request->NIK,
-                'kpj' => $request->KPJ
+                'message' => 'Nomor KPJ terdaftar.',
+                'nik' => $request->nik_tk,
+                'kpj' => $request->no_kpj
             ], 201);
         }else{
             return response()->json([
@@ -47,16 +47,16 @@ class KlaimController extends Controller
 
     public function cekIbu(Request $request){
         $this->validate($request,[
-            'NIK' => 'required|string',
-            'KPJ' => 'required|string',
-            'namaIbu' => 'required|string',
+            'nik_tk' => 'required|string',
+            'no_kpj' => 'required|string',
+            'nama_ibu' => 'required|string',
         ]);
 
-        if(Klaim::where([['namaIbu', $request->namaIbu], ['NIK', $request->NIK], ['KPJ', $request->KPJ]])->first() != null){
-            $data = Klaim::where([
-                ['NIK', '=', $request->NIK],
-                ['KPJ', '=', $request->KPJ],
-                ['namaIbu', '=', $request->namaIbu]
+        if(Tenagakerja::where([['nama_ibu', $request->nama_ibu], ['nik_tk', $request->nik_tk], ['no_kpj', $request->no_kpj]])->first() != null){
+            $data = Tenagakerja::where([
+                ['nik_tk', '=', $request->nik_tk],
+                ['no_kpj', '=', $request->no_kpj],
+                ['nama_ibu', '=', $request->nama_ibu]
             ])->get();
 
             return response()->json([
