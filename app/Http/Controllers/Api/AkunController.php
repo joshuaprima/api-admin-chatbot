@@ -3,9 +3,12 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Mail\BPJSEmail;
 use Illuminate\Http\Request;
 use App\Models\Tenagakerja;
 use Validator;
+use Illuminate\Support\Facades\Mail;
+
 class AkunController extends Controller
 {
     public function cekNIK(Request $request){
@@ -75,12 +78,21 @@ class AkunController extends Controller
 
         if(Tenagakerja::where([['nama_ibu', $request->nama_ibu], ['nik_tk', $request->nik_tk], ['no_kpj', $request->no_kpj], ['email', $request->email]])->first() != null){
             $digit = rand(1000,9999);
-            $data = array_merge(['nama_ibu' => $request->nama_ibu], ['nik_tk' => $request->nik_tk], ['no_kpj'=> $request->no_kpj], ['email' => $request->email]);
-            return response()->json([
-                'message' => 'Data terverifikasi.',
-                'data' => $data,
-                'digit' => $digit
-            ], 201);
+            $dataedit = Tenagakerja::where([['nama_ibu', $request->nama_ibu], ['nik_tk', $request->nik_tk], ['no_kpj', $request->no_kpj], ['email', $request->email]])->first();
+
+            $dataedit->kode_tiket = $digit;
+            if($dataedit->save()){
+                $data = Tenagakerja::where([['nama_ibu', $request->nama_ibu], ['nik_tk', $request->nik_tk], ['no_kpj', $request->no_kpj], ['email', $request->email]])->get();
+
+                //Send Email
+                Mail::to($request->email)->send(new BPJSEmail($data, $digit));
+
+                return response()->json([
+                    'message' => 'Data terverifikasi.',
+                    'data' => $data,
+                    'digit' => $digit
+                ], 201);
+            }
         }else{
             return response()->json([
                 'message' => 'Maaf, email belum terdaftar.',

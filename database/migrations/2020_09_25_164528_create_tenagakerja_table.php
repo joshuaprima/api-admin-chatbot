@@ -33,6 +33,7 @@ class CreateTenagakerjaTable extends Migration
             $table->string('klaim');
             $table->string('status_klaim');
             $table->string('ket_klaim');
+            $table->string('kode_tiket')->nullable();
             $table->timestamps();
         });
     }
