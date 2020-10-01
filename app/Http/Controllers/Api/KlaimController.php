@@ -69,4 +69,23 @@ class KlaimController extends Controller
             ], 400);
         }
     }
+
+    public function cekStatusKode(Request $request){
+        $this->validate($request,[
+            'kode_tiket' => 'required|string',
+        ]);
+
+        if(Tenagakerja::where('kode_tiket', $request->kode_tiket)->first() != null){
+            $data = Tenagakerja::where('kode_tiket', $request->kode_tiket)->get();
+
+            return response()->json([
+                'message' => 'Status didapatkan.',
+                'data' => $data
+            ], 201);
+        }else{
+            return response()->json([
+                'message' => 'Maaf, kode tiket tidak ada.',
+            ], 400);
+        }
+    }
 }

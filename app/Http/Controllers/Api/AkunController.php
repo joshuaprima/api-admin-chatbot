@@ -3,7 +3,8 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Mail\BPJSEmail;
+use App\Mail\BPJSEmailReset;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Models\Tenagakerja;
 use Validator;
@@ -77,19 +78,17 @@ class AkunController extends Controller
         ]);
 
         if(Tenagakerja::where([['nama_ibu', $request->nama_ibu], ['nik_tk', $request->nik_tk], ['no_kpj', $request->no_kpj], ['email', $request->email]])->first() != null){
-            $digit = rand(1000,9999);
+            $digit = 'B-' . Carbon::now()->format('myd') . '-' . rand(1000,9999);
             $dataedit = Tenagakerja::where([['nama_ibu', $request->nama_ibu], ['nik_tk', $request->nik_tk], ['no_kpj', $request->no_kpj], ['email', $request->email]])->first();
 
             $dataedit->kode_tiket = $digit;
             if($dataedit->save()){
-                $data = Tenagakerja::where([['nama_ibu', $request->nama_ibu], ['nik_tk', $request->nik_tk], ['no_kpj', $request->no_kpj], ['email', $request->email]])->get();
-
                 //Send Email
-                Mail::to($request->email)->send(new BPJSEmail($data, $digit));
+                Mail::to($request->email)->send(new BPJSEmailReset($dataedit, $digit));
 
                 return response()->json([
                     'message' => 'Data terverifikasi.',
-                    'data' => $data,
+                    'data' => $dataedit,
                     'digit' => $digit
                 ], 201);
             }

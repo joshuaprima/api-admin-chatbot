@@ -7,7 +7,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class BPJSEmail extends Mailable
+class BPJSEmailReset extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -17,12 +17,12 @@ class BPJSEmail extends Mailable
      * @return void
      */
 
-    public $data;
+    public $dataedit;
     public $digit;
 
-    public function __construct($data, $digit)
+    public function __construct($dataedit, $digit)
     {
-        $this->data = $data;
+        $this->dataedit = $dataedit;
         $this->digit = $digit;
     }
 
@@ -34,10 +34,10 @@ class BPJSEmail extends Mailable
     public function build()
     {
         return $this->from('sdimasfarhan@gmail.com')
-                    ->view('email')
+                    ->view('emailreset')
                     ->subject('Reset Akun')
                     ->with([
-                        'data' => $this->data,
+                        'dataedit' => $this->dataedit,
                         'digit' => $this->digit
                     ]);
     }
