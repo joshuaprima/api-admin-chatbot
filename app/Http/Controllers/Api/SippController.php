@@ -3,8 +3,10 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Mail\BPJSEmailSipp;
 use Illuminate\Http\Request;
 use App\Models\Sipp;
+use Illuminate\Support\Facades\Mail;
 use Validator;
 class SippController extends Controller
 {
@@ -21,6 +23,8 @@ class SippController extends Controller
         $data->namaAR = $request->namaAR;
 
         if($data->save()){
+            Mail::to($request->email)->send(new BPJSEmailSipp($data));
+
             return response()->json([
                 'message' => 'Terima kasih atas laporannya. Laporan kamu akan ditindaklanjuti dan cek email secara berkala.',
                 'data' => $data

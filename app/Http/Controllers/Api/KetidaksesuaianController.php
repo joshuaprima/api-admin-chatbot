@@ -3,8 +3,10 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Mail\BPJSEmailKetidaksesuaian;
 use Illuminate\Http\Request;
 use App\Models\Ketidaksesuaian;
+use Illuminate\Support\Facades\Mail;
 use Validator;
 class KetidaksesuaianController extends Controller
 {
@@ -25,6 +27,8 @@ class KetidaksesuaianController extends Controller
         $data->alasan = $request->alasan;
 
         if($data->save()){
+            Mail::to($request->email)->send(new BPJSEmailKetidaksesuaian($data));
+
             return response()->json([
                 'message' => 'Terima kasih atas laporannya. Laporan kamu akan ditindaklanjuti dan cek email secara berkala.',
                 'data' => $data
