@@ -28,3 +28,8 @@ Route::get('/saldo', 'App\Http\Controllers\SaldoController@saldo');
 Route::get('/tenaga', 'App\Http\Controllers\TenagaController@tenaga');
 Route::get('/testimoni', 'App\Http\Controllers\TestimoniController@testimoni');
 Route::get('/', 'App\Http\Controllers\IndexController@index');
+
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
