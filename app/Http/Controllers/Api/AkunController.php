@@ -69,7 +69,7 @@ class AkunController extends Controller
         }
     }
 
-    public function cekEmail(Request $request){
+    public function inputEmail(Request $request){
         $this->validate($request,[
             'nik_tk' => 'required|string',
             'no_kpj' => 'required|string',
@@ -77,9 +77,9 @@ class AkunController extends Controller
             'email' => 'required|email'
         ]);
 
-        if(Tenagakerja::where([['nama_ibu', $request->nama_ibu], ['nik_tk', $request->nik_tk], ['no_kpj', $request->no_kpj], ['email', $request->email]])->first() != null){
+        if(Tenagakerja::where([['nama_ibu', $request->nama_ibu], ['nik_tk', $request->nik_tk], ['no_kpj', $request->no_kpj]])->first() != null){
             $digit = 'B-' . Carbon::now()->format('myd') . '-' . rand(1000,9999);
-            $dataedit = Tenagakerja::where([['nama_ibu', $request->nama_ibu], ['nik_tk', $request->nik_tk], ['no_kpj', $request->no_kpj], ['email', $request->email]])->first();
+            $dataedit = Tenagakerja::where([['nama_ibu', $request->nama_ibu], ['nik_tk', $request->nik_tk], ['no_kpj', $request->no_kpj]])->first();
 
             $dataedit->kode_tiket = $digit;
             if($dataedit->save()){
@@ -89,12 +89,13 @@ class AkunController extends Controller
                 return response()->json([
                     'message' => 'Data terverifikasi.',
                     'data' => $dataedit,
-                    'digit' => $digit
+                    'digit' => $digit,
+                    'email' => $request->email
                 ], 201);
             }
         }else{
             return response()->json([
-                'message' => 'Maaf, email belum terdaftar.',
+                'message' => 'Email tidak terkirim.',
             ], 400);
         }
     }
