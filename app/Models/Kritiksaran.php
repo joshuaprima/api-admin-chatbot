@@ -12,5 +12,5 @@ class Kritiksaran extends Model
     protected $table = 'kritiksaran';
     protected $primaryKey = "kritikID";
 
-    protected $fillable = ['isi'];
+    protected $fillable = ['isi','created_at'];
 }
