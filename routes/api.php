@@ -36,5 +36,5 @@ Route::post('sipp', 'App\Http\Controllers\Api\SippController@postData');
 Route::get('akun-nik', 'App\Http\Controllers\Api\AkunController@cekNIK');
 Route::get('akun-kpj', 'App\Http\Controllers\Api\AkunController@cekKPJ');
 Route::get('akun-ibu', 'App\Http\Controllers\Api\AkunController@cekIbu');
-Route::get('akun-verif', 'App\Http\Controllers\Api\AkunController@cekEmail');
-Route::get('status-kode', 'App\Http\Controllers\Api\KlaimController@cekStatusKode');
+Route::get('akun-verif', 'App\Http\Controllers\Api\AkunController@inputEmail');
+Route::post('status-kode', 'App\Http\Controllers\Api\KlaimController@cekStatusKode');

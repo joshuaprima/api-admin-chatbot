@@ -1,8 +1,5 @@
-<h3>Halo {{$dataedit['nama_tk']}}! <br>Akun anda akan direset dengan data:</h3>
-
-<p>NIK : {{$dataedit['nik_tk']}}</p>
-<p>No. KPJ : {{$dataedit['no_kpj']}}</p>
-<p>Nama Ibu : {{$dataedit['nama_ibu']}}</p>
-<p>Email: {{$dataedit['email']}}</p>
-
-<h4>Kode reset : {{$digit}}</h4>
+<h3>Halo {{$dataedit['nama_tk']}}!</h3>
+<p>Terimakasih atas laporan yang diberikan.</p>
+<p>Laporan Anda sudah tercatat pada tiket dengan nomor {{$digit}}</p>
+<p>Saat ini sedang dilakukan pengecekan oleh tim terkait permasalahan yang Anda laporkan.</p>
+<p>Demikian disampaikan, terima kasih atas kerjasamanya dan selamat bekerja kembali.</p>
