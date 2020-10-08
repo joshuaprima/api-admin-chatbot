@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Mail\BPJSEmailReset;
+use App\Models\Resetakun;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Models\Tenagakerja;
@@ -85,6 +86,13 @@ class AkunController extends Controller
             if($dataedit->save()){
                 //Send Email
                 Mail::to($request->email)->send(new BPJSEmailReset($dataedit, $digit));
+
+                $resetdata = new Resetakun();
+                $resetdata->tkID = $dataedit['id'];
+                $resetdata->nik = $request->nik_tk;
+                $resetdata->kpj = $request->no_kpj;
+                $resetdata->email = $request->email;
+                $resetdata->save();
 
                 return response()->json([
                     'message' => 'Data terverifikasi.',

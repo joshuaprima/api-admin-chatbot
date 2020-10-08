@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Resetakun;
 use Illuminate\Http\Request;
-use App\Models\Tenagakerja;
 
 class AkunController extends Controller
 {
@@ -11,10 +11,10 @@ class AkunController extends Controller
     {
         $this->middleware('auth');
     }
-    
+
     public function akun()
     {
-        $akun=Tenagakerja::all();
+        $akun=Resetakun::all();
         return view('akun', compact('akun'));
     }
 }

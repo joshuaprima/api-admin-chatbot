@@ -23,7 +23,7 @@ class IndexController extends Controller
     $counttenaga = Tenagakerjabt::all()->count();
     $countketidaksesuaian = Ketidaksesuaian::all()->count();
     $countsipp = Sipp::all()->count();
-    $indextable=Tenagakerja::all();
+    $indextable=Tenagakerja::where('kode_tiket', '!=', null)->get();
     return view('index', compact('countperusahaan', 'countketidaksesuaian', 'counttenaga', 'countsipp','indextable'));
     }
 

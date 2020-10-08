@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>CHATBOT DASHBOARD ADMIN</title>
+  <title>Dashboard</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Font Awesome -->
@@ -27,6 +27,9 @@
   <link rel="stylesheet" href="{{asset('plugins/summernote/summernote-bs4.css')}}">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+    <link rel="stylesheet" href="{{asset('plugins/datatables-bs4/css/dataTables.bootstrap4.min.css')}}">
+    <link rel="stylesheet" href="{{asset('plugins/datatables-responsive/css/responsive.bootstrap4.min.css')}}">
+    <link rel="icon" href="{{ asset('favicon.ico') }}"/>
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
@@ -35,56 +38,19 @@
     <ul class="navbar-nav">
       <li class="nav-item">
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
-      
-      </li>
-      <li class="nav-item d-none d-sm-inline-block">
-      <ul class="navbar-nav ml-auto">
-                        <!-- Authentication Links -->
-                        @guest
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                            </li>
-                            @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                </li>
-                            @endif
-                        @else
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle alignright" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }}
-                                </a>
 
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
-                                    <a class="dropdown-item" href="{{ route('register') }}"
-                                       onclick="event.preventDefault();">
-                                        {{ __('Register New Admin') }}
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                        @csrf
-                                    </form>
-                                </div>
-                            </li>
-                        @endguest
-                    </ul>
-        <a href="index3.html" class="nav-link"></a>
       </li>
+
       <li class="nav-item d-none d-sm-inline-block">
         <a href="#" class="nav-link"></a>
       </li>
     </ul>
 
     <!-- SEARCH FORM -->
-   
+
 
     <!-- Right navbar links -->
-    
+
   </nav>
   <!-- Navbar -->
 
@@ -94,96 +60,104 @@
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="/" class="brand-link">
-      
+
       <span class="brand-text font-weight-light"><center>ADMIN CHATBOT</center></span>
     </a>
 
     <!-- Sidebar -->
     <div class="sidebar">
       <!-- Sidebar user panel (optional) -->
-      
+
 
       <!-- Sidebar Menu -->
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-          
-         
 
 
-               <li class="nav-item has-treeview">
-            
+
+
             <li class="nav-item has-treeview">
-              <li class="nav-item">
-                <a href="/sipp" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Akun SIPP</p>
+
+            <li class="nav-item has-treeview">
+            <li class="nav-item">
+                <a href="/" class="nav-link active">
+
+
+                    <p>Dashboard</p>
                 </a>
-              </li>
-              <li class="nav-item">
+            </li>
+            <li class="nav-item">
+                <a href="/sipp" class="nav-link ">
+
+                    <p>Akun SIPP</p>
+                </a>
+            </li>
+            <li class="nav-item">
                 <a href="/akun" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Daftar Akun</p>
+
+                    <p>Daftar Akun Reset</p>
                 </a>
-              </li>
-              <li class="nav-item">
+            </li>
+            <li class="nav-item">
                 <a href="/kepesertaan" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Kepesertaan</p>
+
+                    <p>Kepesertaan</p>
                 </a>
-              </li>
-              <li class="nav-item">
+            </li>
+            <li class="nav-item">
                 <a href="/ketidaksesuaian" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Ketidaksesuaian Akun</p>
+
+                    <p>Ketidaksesuaian Data</p>
                 </a>
-              </li>
-              <li class="nav-item">
+            </li>
+            <li class="nav-item">
                 <a href="/klaim" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Klaim</p>
+
+                    <p>Klaim</p>
                 </a>
-              </li>
-              <li class="nav-item">
+            </li>
+            <li class="nav-item">
                 <a href="/kritik" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Kritik</p>
+
+                    <p>Kritik</p>
                 </a>
-              </li>
-              <li class="nav-item">
+            </li>
+            <li class="nav-item">
                 <a href="/perusahaan" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Perusahaan Blm Terdaftar</p>
+
+                    <p>Perusahaan Belum Terdaftar</p>
                 </a>
-              </li>
-              <li class="nav-item">
+            </li>
+            <li class="nav-item">
                 <a href="/tenaga" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Tng Kerja Blm Terdaftar</p>
+
+                    <p>Tenaga Kerja Belum Terdaftar</p>
                 </a>
-              </li>
-              <li class="nav-item">
+            </li>
+            <li class="nav-item">
                 <a href="/saldo" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Saldo</p>
+
+                    <p>Saldo</p>
                 </a>
-              </li>
-              <li class="nav-item">
+            </li>
+            <li class="nav-item">
                 <a href="/testimoni" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Testimoni</p>
+
+                    <p>Testimoni</p>
                 </a>
-              </li>
-
-            
-    
-          
-          
-
-
-
-
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('logout') }}"
+                   onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                    <p>Logout</p>
+                </a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                    @csrf
+                </form>
+            </li>
 
         </li>
       </nav>
@@ -242,7 +216,7 @@
               <div class="icon">
                 <i class="ion ion-person-add"></i>
               </div>
-              <a href="/tenaga" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                <a href="/tenaga" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
@@ -257,80 +231,63 @@
               <div class="icon">
                 <i class="ion ion-pie-graph"></i>
               </div>
-              <a href="/akunsipp" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="/sipp" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
 
           <div class="row">
-          
-          
+
+
         </div>
         <div class="col-12">
             <div class="card">
               <div class="card-header">
                 <h3 class="card-title">Kode Antrian yang Masuk</h3>
-
-
               </div>
               <!-- /.card-header -->
-              
               <!-- /.card-body -->
             </div>
-            
+
             <!-- /.card -->
           </div>
-        <div class="card-body table-responsive p-0" style="height: 300px;">
-                <table class="table table-head-fixed text-nowrap">
-                  <thead>
-                    <tr>
-                      <th>Kode Tiket</th>
-                      <th>Status Klaim</th>
-                      <th>Status KPJ</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                  @foreach($indextable as $data)
-                    <tr>
-                      <td>{{ $data->kode_tiket }}</td>
-                      <td>{{ $data->status_klaim }}</td>
-                      <td>{{ $data->status_kpj }}</td>
-                    </tr>
-                    @endforeach
-                  </tbody>
-                </table>
+
+          <div class="col-12">
+              <div class="card">
+                  <div class="card-body">
+                      <div class="card-body table-responsive p-0" >
+                          <table id="example1" class="table table-bordered table-hover">
+                              <thead>
+                              <tr>
+                                  <th>Kode Tiket</th>
+                                  <th>Status Klaim</th>
+                                  <th>Status KPJ</th>
+                              </tr>
+                              </thead>
+                              <tbody>
+                              @foreach($indextable as $data)
+                                  <tr>
+                                      <td>{{ $data->kode_tiket }}</td>
+                                      <td>{{ $data->status_klaim }}</td>
+                                      <td>{{ $data->status_kpj }}</td>
+                                  </tr>
+                              @endforeach
+                              </tbody>
+                          </table>
+                      </div>
+                  </div>
+                  <!-- /.card-header -->
+                  <!-- /.card-body -->
               </div>
+
+              <!-- /.card -->
+          </div>
+
+
       </div><!-- /.container-fluid -->
     </div>
     <!-- /.content-header -->
 
-    <!-- Main content -->
-    <section class="content">
-      <div class="container-fluid">
-        <!-- Small boxes (Stat box) -->
-      
-        <!-- /.row -->
-        <!-- Main row -->
-        <div class="row">
-          <!-- Left col -->
-          <section class="content">
-            <!-- Custom tabs (Charts with tabs)-->
 
-            <!-- /.card -->
-
-            <!-- DIRECT CHAT -->
-
-            <!--/.direct-chat -->
-
-            <!-- TO DO List -->
-
-
-        <br>
-        <div class="form-group">
-        <!-- <input type="submit" class="btn btn-success" value="Add Driver"> -->
-          </div>
-          </form>
-            <!-- /.card -->
-          </section>
           <!-- /.Left col -->
           <!-- right col (We are only adding the ID to make the widgets sortable)-->
           <section class="col-lg-5 connectedSortable">
@@ -340,7 +297,7 @@
             <!-- /.card -->
 
             <!-- solid sales graph -->
-     
+
             <!-- /.card -->
 
             <!-- Calendar -->
@@ -356,7 +313,7 @@
   </div>
   <!-- /.content-wrapper -->
   <footer class="main-footer">
-    <strong>Copyright <a href="https://bpjs-kesehatan.go.id/">BPJS-Kesehatan.go.id</a>.</strong>
+    <strong>Copyright <a href="https://www.bpjsketenagakerjaan.go.id/">BPJS-Ketenagakerjaan.go.id</a>.</strong>
     All rights reserved.
     <div class="float-right d-none d-sm-inline-block">
       <b>BPJS</b> Badan Penyelenggara Jaminan Sosial
@@ -405,5 +362,26 @@
 <script src="dist/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="dist/js/demo.js"></script>
+    <script src="{{asset('plugins/datatables/jquery.dataTables.min.js')}}"></script>
+    <script src="{{asset('plugins/datatables-bs4/js/dataTables.bootstrap4.min.js')}}"></script>
+    <script src="{{asset('plugins/datatables-responsive/js/dataTables.responsive.min.js')}}"></script>
+    <script src="{{asset('plugins/datatables-responsive/js/responsive.bootstrap4.min.js')}}"></script>
+    <script>
+        $(function () {
+            $("#example1").DataTable({
+                "responsive": true,
+                "autoWidth": false,
+            });
+            $('#example2').DataTable({
+                "paging": true,
+                "lengthChange": false,
+                "searching": false,
+                "ordering": true,
+                "info": true,
+                "autoWidth": false,
+                "responsive": true,
+            });
+        });
+    </script>
 </body>
 </html>

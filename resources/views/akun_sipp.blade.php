@@ -26,6 +26,9 @@
   <link rel="stylesheet" href="{{asset('plugins/summernote/summernote-bs4.css')}}">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+    <link rel="stylesheet" href="{{asset('plugins/datatables-bs4/css/dataTables.bootstrap4.min.css')}}">
+    <link rel="stylesheet" href="{{asset('plugins/datatables-responsive/css/responsive.bootstrap4.min.css')}}">
+    <link rel="icon" href="{{ asset('favicon.ico') }}"/>
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
@@ -46,10 +49,10 @@
     </ul>
 
     <!-- SEARCH FORM -->
-   
+
 
     <!-- Right navbar links -->
-    
+
   </nav>
   <!-- /.navbar -->
 
@@ -57,97 +60,104 @@
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="/" class="brand-link">
-      
+
       <span class="brand-text font-weight-light"><center>ADMIN CHATBOT </center></span>
     </a>
 
     <!-- Sidebar -->
     <div class="sidebar">
       <!-- Sidebar user panel (optional) -->
-      
+
 
       <!-- Sidebar Menu -->
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-          
-         
 
 
-          <li class="nav-item has-treeview">
-            
+
+
             <li class="nav-item has-treeview">
-              <li class="nav-item">
-                <a href="/sipp" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Akun SIPP</p>
+
+            <li class="nav-item has-treeview">
+            <li class="nav-item">
+                <a href="/" class="nav-link">
+
+
+                    <p>Dashboard</p>
                 </a>
-              </li>
-              <li class="nav-item">
+            </li>
+            <li class="nav-item">
+                <a href="/sipp" class="nav-link active">
+
+                    <p>Akun SIPP</p>
+                </a>
+            </li>
+            <li class="nav-item">
                 <a href="/akun" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Daftar Akun</p>
+
+                    <p>Daftar Akun Reset</p>
                 </a>
-              </li>
-              <li class="nav-item">
+            </li>
+            <li class="nav-item">
                 <a href="/kepesertaan" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Kepesertaan</p>
+
+                    <p>Kepesertaan</p>
                 </a>
-              </li>
-              <li class="nav-item">
+            </li>
+            <li class="nav-item">
                 <a href="/ketidaksesuaian" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Ketidaksesuaian Akun</p>
+
+                    <p>Ketidaksesuaian Data</p>
                 </a>
-              </li>
-              <li class="nav-item">
+            </li>
+            <li class="nav-item">
                 <a href="/klaim" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Klaim</p>
+
+                    <p>Klaim</p>
                 </a>
-              </li>
-              <li class="nav-item">
+            </li>
+            <li class="nav-item">
                 <a href="/kritik" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Kritik</p>
+
+                    <p>Kritik</p>
                 </a>
-              </li>
-              <li class="nav-item">
+            </li>
+            <li class="nav-item">
                 <a href="/perusahaan" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Perusahaan Blm Terdaftar</p>
+
+                    <p>Perusahaan Belum Terdaftar</p>
                 </a>
-              </li>
-              <li class="nav-item">
+            </li>
+            <li class="nav-item">
                 <a href="/tenaga" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Tng Kerja Blm Terdaftar</p>
+
+                    <p>Tenaga Kerja Belum Terdaftar</p>
                 </a>
-              </li>
-              <li class="nav-item">
+            </li>
+            <li class="nav-item">
                 <a href="/saldo" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Saldo</p>
+
+                    <p>Saldo</p>
                 </a>
-              </li>
-              <li class="nav-item">
+            </li>
+            <li class="nav-item">
                 <a href="/testimoni" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Testimoni</p>
+
+                    <p>Testimoni</p>
                 </a>
-              </li>
-
-            
-    
-          
-          
-
-
-
-
-
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('logout') }}"
+                   onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                    <p>Logout</p>
+                </a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                    @csrf
+                </form>
+            </li>
         </li>
       </nav>
       <!-- /.sidebar-menu -->
@@ -164,7 +174,7 @@
           <div class="col-sm-6">
             <h1 class="m-0 text-dark">Daftar Akun SIPP</h1>
           </div><!-- /.col -->
-        
+
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
     </div>
@@ -174,63 +184,46 @@
     <section class="content">
       <div class="container-fluid">
         <!-- Small boxes (Stat box) -->
-      
+
         <!-- /.row -->
         <!-- Main row -->
-        <form action="/add_driver">
             <div class="row">
           <div class="col-12">
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">List of all SIPP Account</h3>
+                <h3 class="card-title">Daftar Akun SIPP</h3>
               </div>
-              <!-- /.card-header -->
-              <div class="card-body table-responsive p-0" style="height: 300px;">
-                <table class="table table-head-fixed text-nowrap">
-                  <thead>
-                    <tr>
-                      <th>Email</th>
-                      <th>Nama AR</th>
-                      <th>NPP</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                  @foreach($sipp as $data)
-                    <tr>
-                      <td>{{ $data->email }}</td>
-                      <td>{{ $data->namaAR }}</td>
-                      <td>{{ $data->NPP }}</td>
-                    </tr>
-                    @endforeach
-                  </tbody>
-                </table>
-              </div>
-              <!-- /.card-body -->
             </div>
+          </div>
+          <div class="col-12">
+              <div class="card">
+                  <div class="card-body">
+                      <div class="card-body table-responsive p-0">
+                          <table id="example1" class="table table-bordered table-hover">
+                              <thead>
+                              <tr>
+                                  <th>NPP</th>
+                                  <th>Email</th>
+                                  <th>Nama AR</th>
+                              </tr>
+                              </thead>
+                              <tbody>
+                              @foreach($sipp as $data)
+                                  <tr>
+                                      <td>{{ $data->NPP }}</td>
+                                      <td>{{ $data->email }}</td>
+                                      <td>{{ $data->namaAR }}</td>
+                                  </tr>
+                              @endforeach
+                              </tbody>
+                          </table>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
             <!-- /.card -->
           </div>
-        </div>
-                </form>
-        <div class="row">
-          <!-- Left col -->
-          
-          <section class="content">
-            <!-- Custom tabs (Charts with tabs)-->
-
-            <!-- /.card -->
-
-            <!-- DIRECT CHAT -->
-
-            <!--/.direct-chat -->
-
-            <!-- TO DO List -->
-            
-                </table>
-              </div>
-              <!-- /.card-body -->
-            </div>
-            <!-- /.card -->
-
         </div>
         <br>
         <div class="form-group">
@@ -241,20 +234,7 @@
           </section>
           <!-- /.Left col -->
           <!-- right col (We are only adding the ID to make the widgets sortable)-->
-          <section class="col-lg-5 connectedSortable">
 
-            <!-- Map card -->
-
-            <!-- /.card -->
-
-            <!-- solid sales graph -->
-     
-            <!-- /.card -->
-
-            <!-- Calendar -->
-
-            <!-- /.card -->
-          </section>
           <!-- right col -->
         </div>
         <!-- /.row (main row) -->
@@ -263,13 +243,13 @@
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
-  <footer class="main-footer">
-    <strong>Copyright <a href="https://bpjs-kesehatan.go.id/">BPJS-Kesehatan.go.id</a>.</strong>
+<footer class="main-footer">
+    <strong>Copyright <a href="https://www.bpjsketenagakerjaan.go.id/">BPJS-Ketenagakerjaan.go.id</a>.</strong>
     All rights reserved.
     <div class="float-right d-none d-sm-inline-block">
-      <b>BPJS</b> Badan Penyelenggara Jaminan Sosial
+        <b>BPJS</b> Badan Penyelenggara Jaminan Sosial
     </div>
-  </footer>
+</footer>
 
   <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark">
@@ -313,5 +293,26 @@
 <script src="dist/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="dist/js/demo.js"></script>
+<script src="{{asset('plugins/datatables/jquery.dataTables.min.js')}}"></script>
+<script src="{{asset('plugins/datatables-bs4/js/dataTables.bootstrap4.min.js')}}"></script>
+<script src="{{asset('plugins/datatables-responsive/js/dataTables.responsive.min.js')}}"></script>
+<script src="{{asset('plugins/datatables-responsive/js/responsive.bootstrap4.min.js')}}"></script>
+<script>
+    $(function () {
+        $("#example1").DataTable({
+            "responsive": true,
+            "autoWidth": false,
+        });
+        $('#example2').DataTable({
+            "paging": true,
+            "lengthChange": false,
+            "searching": false,
+            "ordering": true,
+            "info": true,
+            "autoWidth": false,
+            "responsive": true,
+        });
+    });
+</script>
 </body>
 </html>
