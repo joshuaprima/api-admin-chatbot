@@ -18,6 +18,7 @@ class CreateSippTable extends Migration
             $table->string('NPP');
             $table->string('email');
             $table->string('namaAR');
+            $table->enum('status', ['0','1'])->default('0');
             $table->timestamps();
         });
     }

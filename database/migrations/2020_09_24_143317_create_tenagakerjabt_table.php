@@ -19,6 +19,7 @@ class CreateTenagakerjabtTable extends Migration
             $table->string('alamat');
             $table->string('telepon');
             $table->integer('jumlahTk');
+            $table->enum('status', ['0','1'])->default('0');
             $table->timestamps();
         });
     }

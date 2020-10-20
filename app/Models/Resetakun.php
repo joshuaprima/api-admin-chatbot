@@ -12,5 +12,5 @@ class Resetakun extends Model
     protected $table = 'resetakun';
     protected $primaryKey = "resetID";
 
-    protected $fillable = ['tkID', 'nik', 'kpj', 'email'];
+    protected $fillable = ['tkID', 'nik', 'kpj', 'email','status'];
 }

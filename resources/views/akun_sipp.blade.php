@@ -205,6 +205,8 @@
                                   <th>NPP</th>
                                   <th>Email</th>
                                   <th>Nama AR</th>
+                                  <th>Status</th>
+                                  <th>Action</th>
                               </tr>
                               </thead>
                               <tbody>
@@ -213,6 +215,13 @@
                                       <td>{{ $data->NPP }}</td>
                                       <td>{{ $data->email }}</td>
                                       <td>{{ $data->namaAR }}</td>
+                                      @if($data->status == 0)
+                                          <td>Belum Terverifikasi</td>
+                                          <td><a href="#" class="btn btn-primary verify" data-id="{{$data->sippID}}">Verifikasi</a></td>
+                                      @elseif($data->status == 1)
+                                          <td>Terverifikasi</td>
+                                          <td><a href="#" class="btn btn-success" disabled>Terverifikasi</a></td>
+                                      @endif
                                   </tr>
                               @endforeach
                               </tbody>
@@ -314,5 +323,38 @@
         });
     });
 </script>
+<script>
+    $(document).on('click','.verify',function(){
+        var id=$(this).attr('data-id');
+        $('#app_id').val(id);
+        $('#verifyModal').modal('show');
+    });
+</script>
+<!--Modal-->
+<div id="verifyModal" class="modal modal-danger fade" tabindex="-1" role="dialog" aria-labelledby="custom-width-modalLabel" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog" style="width:55%;">
+        <div class="modal-content">
+            <form action="{{url('/sipp/verify')}}" method="POST" class="remove-record-model">
+                {{ method_field('post') }}
+                {{ csrf_field() }}
+
+                <div class="modal-header">
+                    <h4 class="modal-title text-center" id="custom-width-modalLabel">Verifikasi</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                </div>
+                <div class="modal-body">
+                    <p>Tekan tombol verifikasi untuk memverifikasi data.</p>
+                    <input type="hidden" name="verify_id" id="app_id">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger waves-effect" data-dismiss="modal">Batal</button>
+                    <button type="submit" class="btn btn-success waves-effect">Verifikasi</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+<!--Modal-->
 </body>
 </html>

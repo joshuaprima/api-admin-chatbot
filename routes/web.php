@@ -28,7 +28,11 @@ Route::get('/saldo', 'App\Http\Controllers\SaldoController@saldo');
 Route::get('/tenaga', 'App\Http\Controllers\TenagaController@tenaga');
 Route::get('/testimoni', 'App\Http\Controllers\TestimoniController@testimoni');
 Route::get('/', 'App\Http\Controllers\IndexController@index');
-
+Route::post('/akun/verify', '\App\Http\Controllers\AkunController@verify');
+Route::post('/sipp/verify', '\App\Http\Controllers\SippController@verify');
+Route::post('/ketidaksesuaian/verify', '\App\Http\Controllers\KetidaksesuaianController@verify');
+Route::post('/perusahaan/verify', '\App\Http\Controllers\PerusahaanController@verify');
+Route::post('/tenaga/verify', '\App\Http\Controllers\TenagaController@verify');
 
 Auth::routes();
 

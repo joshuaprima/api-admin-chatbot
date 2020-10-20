@@ -19,6 +19,7 @@ class CreateResetakunTable extends Migration
             $table->string('nik');
             $table->string('kpj');
             $table->string('email');
+            $table->enum('status', ['0','1'])->default('0');
             $table->timestamps();
         });
     }

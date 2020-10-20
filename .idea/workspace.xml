@@ -2,26 +2,29 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ce997e27-b2be-4c42-a9e4-fc7af866c5ab" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/ChatBot.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ChatBot.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AkunController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AkunController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/AkunController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/AkunController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/IndexController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/IndexController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/bootstrap/css/bootstrap.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/bootstrap/css/bootstrap.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/adminlte.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/adminlte.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/KetidaksesuaianController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/KetidaksesuaianController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PerusahaanController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PerusahaanController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PerusahaanDaftarController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SippController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SippController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TenagaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TenagaController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Ketidaksesuaian.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Ketidaksesuaian.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Perusahaanbt.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Perusahaanbt.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Resetakun.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Resetakun.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Sipp.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Sipp.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Tenagakerjabt.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Tenagakerjabt.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_09_24_143109_create_perusahaanbt_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_09_24_143109_create_perusahaanbt_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_09_24_143317_create_tenagakerjabt_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_09_24_143317_create_tenagakerjabt_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_09_24_143603_create_ketidaksesuaian_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_09_24_143603_create_ketidaksesuaian_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_09_24_143832_create_sipp_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_09_24_143832_create_sipp_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_10_08_094236_create_resetakun_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_10_08_094236_create_resetakun_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/akun.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/akun.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/akun_sipp.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/akun_sipp.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/kepesertaan.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/kepesertaan.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/ketidaksesuaian.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/ketidaksesuaian.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/klaim.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/klaim.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/kritik.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/kritik.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/perusahaan_terdaftar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/perusahaan_terdaftar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/saldo.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/saldo.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/tenaga_terdaftar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/tenaga_terdaftar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/testimoni.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/testimoni.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -156,7 +159,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../OMIND/mysupir-backend-user" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -191,7 +194,11 @@
       <workItem from="1601966803063" duration="2061000" />
       <workItem from="1601968944787" duration="5709000" />
       <workItem from="1602131022829" duration="9704000" />
-      <workItem from="1602144326579" duration="8172000" />
+      <workItem from="1602144326579" duration="8550000" />
+      <workItem from="1602225110410" duration="691000" />
+      <workItem from="1603089678988" duration="11922000" />
+      <workItem from="1603168836143" duration="1031000" />
+      <workItem from="1603176610557" duration="3555000" />
     </task>
     <servers />
   </component>
@@ -199,30 +206,30 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="449" y="148" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1601968631899">
+    <state x="449" y="148" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1603176370849">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="449" y="148" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1536.824@0.0.1536.824" timestamp="1601968631899" />
+    <state x="449" y="148" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1536.824@0.0.1536.824" timestamp="1603176370849" />
     <state x="522" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1601538788505">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="522" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.824@0.0.1536.824" timestamp="1601538788505" />
-    <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1602150758790">
+    <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1603177905695">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824@0.0.1536.824" timestamp="1602150758790" />
-    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1602145186687">
+    <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824@0.0.1536.824" timestamp="1603177905695" />
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1602225793474">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1602145186687" />
-    <state x="604" y="332" key="NewPhpFileDialog" timestamp="1601540961662">
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1602225793474" />
+    <state x="604" y="332" key="NewPhpFileDialog" timestamp="1603178137793">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="604" y="332" key="NewPhpFileDialog/0.0.1536.824@0.0.1536.824" timestamp="1601540961662" />
-    <state x="376" y="23" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1602151572105">
+    <state x="604" y="332" key="NewPhpFileDialog/0.0.1536.824@0.0.1536.824" timestamp="1603178137793" />
+    <state x="376" y="23" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1603178719142">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="376" y="23" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1536.824@0.0.1536.824" timestamp="1602151572105" />
+    <state x="376" y="23" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1536.824@0.0.1536.824" timestamp="1603178719142" />
     <state x="596" y="168" key="refactoring.ChangeSignatureDialog" timestamp="1601448408473">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

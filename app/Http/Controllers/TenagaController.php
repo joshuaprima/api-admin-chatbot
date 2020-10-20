@@ -11,9 +11,19 @@ class TenagaController extends Controller
     {
         $this->middleware('auth');
     }
+
     public function tenaga()
     {
         $tenaga=Tenagakerjabt::all();
         return view('tenaga_terdaftar', compact('tenaga'));
+    }
+
+    public function verify(Request $request){
+        $verify_id=$request->input('verify_id');
+
+        $data=Tenagakerjabt::findOrFail($verify_id);
+        $data->status = '1';
+        $data->save();
+        return back();
     }
 }

@@ -11,11 +11,19 @@ class PerusahaanController extends Controller
     {
         $this->middleware('auth');
     }
+
     public function perusahaan()
     {
-
-        
         $perusahaan=Perusahaanbt::all();
         return view('perusahaan_terdaftar', compact('perusahaan'));
+    }
+
+    public function verify(Request $request){
+        $verify_id=$request->input('verify_id');
+
+        $data=Perusahaanbt::findOrFail($verify_id);
+        $data->status = '1';
+        $data->save();
+        return back();
     }
 }

@@ -20,6 +20,7 @@ class CreateKetidaksesuaianTable extends Migration
             $table->string('email');
             $table->string('nohp');
             $table->text('alasan');
+            $table->enum('status', ['0','1'])->default('0');
             $table->timestamps();
         });
     }

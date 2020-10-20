@@ -12,9 +12,19 @@ class SippController extends Controller
     {
         $this->middleware('auth');
     }
+
     public function sipp()
     {
         $sipp=Sipp::all();
         return view('akun_sipp', compact('sipp'));
+    }
+
+    public function verify(Request $request){
+        $verify_id=$request->input('verify_id');
+
+        $sipp=Sipp::findOrFail($verify_id);
+        $sipp->status = '1';
+        $sipp->save();
+        return back();
     }
 }

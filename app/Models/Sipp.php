@@ -12,5 +12,5 @@ class Sipp extends Model
     protected $table = 'sipp';
     protected $primaryKey = "sippID";
 
-    protected $fillable = ['NPP', 'email', 'namaAR'];
+    protected $fillable = ['NPP', 'email', 'namaAR','status'];
 }

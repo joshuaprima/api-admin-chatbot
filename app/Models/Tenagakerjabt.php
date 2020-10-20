@@ -12,5 +12,5 @@ class Tenagakerjabt extends Model
     protected $table = 'tenagakerjabt';
     protected $primaryKey = "tenagakerjaID";
 
-    protected $fillable = ['nama', 'alamat', 'telepon', 'jumlahTk'];
+    protected $fillable = ['nama', 'alamat', 'telepon', 'jumlahTk','status'];
 }

@@ -12,6 +12,6 @@ class Perusahaanbt extends Model
     protected $table = 'perusahaanbt';
     protected $primaryKey = "perusahaanID";
 
-    protected $fillable = ['nama', 'alamat', 'telepon', 'jumlahTk'];
+    protected $fillable = ['nama', 'alamat', 'telepon', 'jumlahTk','status'];
 
 }

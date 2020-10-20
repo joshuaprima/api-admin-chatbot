@@ -12,5 +12,5 @@ class Ketidaksesuaian extends Model
     protected $table = 'ketidaksesuaian';
     protected $primaryKey = "ketidaksesuaianID";
 
-    protected $fillable = ['NIK', 'KPJ', 'email', 'nohp', 'alasan'];
+    protected $fillable = ['NIK', 'KPJ', 'email', 'nohp', 'alasan','status'];
 }

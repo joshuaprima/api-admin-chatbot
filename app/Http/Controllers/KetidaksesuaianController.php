@@ -12,11 +12,19 @@ class KetidaksesuaianController extends Controller
     {
         $this->middleware('auth');
     }
+
     public function ketidaksesuaian()
     {
-
-        
         $ketidaksesuaian=Ketidaksesuaian::all();
         return view('ketidaksesuaian', compact('ketidaksesuaian'));
+    }
+
+    public function verify(Request $request){
+        $verify_id=$request->input('verify_id');
+
+        $data=Ketidaksesuaian::findOrFail($verify_id);
+        $data->status = '1';
+        $data->save();
+        return back();
     }
 }
