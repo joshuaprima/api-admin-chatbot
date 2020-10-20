@@ -23,7 +23,7 @@ class AkunController extends Controller
     public function verify(Request $request){
         $this->validate($request,[
             'verify_id' => 'required',
-            'file' => 'nullable',
+            'file' => 'required',
         ]);
         $verify_id=$request->input('verify_id');
 

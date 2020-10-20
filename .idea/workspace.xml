@@ -2,29 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ce997e27-b2be-4c42-a9e4-fc7af866c5ab" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AkunController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AkunController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/KetidaksesuaianController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/KetidaksesuaianController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PerusahaanController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PerusahaanController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PerusahaanDaftarController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SippController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SippController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TenagaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TenagaController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Ketidaksesuaian.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Ketidaksesuaian.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Perusahaanbt.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Perusahaanbt.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Resetakun.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Resetakun.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Sipp.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Sipp.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Tenagakerjabt.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Tenagakerjabt.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_09_24_143109_create_perusahaanbt_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_09_24_143109_create_perusahaanbt_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_09_24_143317_create_tenagakerjabt_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_09_24_143317_create_tenagakerjabt_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_09_24_143603_create_ketidaksesuaian_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_09_24_143603_create_ketidaksesuaian_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_09_24_143832_create_sipp_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_09_24_143832_create_sipp_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_10_08_094236_create_resetakun_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_10_08_094236_create_resetakun_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/akun.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/akun.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/akun_sipp.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/akun_sipp.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/ketidaksesuaian.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/ketidaksesuaian.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/perusahaan_terdaftar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/perusahaan_terdaftar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/tenaga_terdaftar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/tenaga_terdaftar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -198,7 +176,7 @@
       <workItem from="1602225110410" duration="691000" />
       <workItem from="1603089678988" duration="11922000" />
       <workItem from="1603168836143" duration="1031000" />
-      <workItem from="1603176610557" duration="3555000" />
+      <workItem from="1603176610557" duration="3970000" />
     </task>
     <servers />
   </component>
