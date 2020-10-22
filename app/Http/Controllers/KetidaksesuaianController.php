@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Ketidaksesuaian;
-
+use UxWeb\SweetAlert\SweetAlert;
 class KetidaksesuaianController extends Controller
 {
 
@@ -25,6 +25,7 @@ class KetidaksesuaianController extends Controller
         $data=Ketidaksesuaian::findOrFail($verify_id);
         $data->status = '1';
         $data->save();
+        alert()->success('Verifikasi berhasil!', 'Sukses');
         return back();
     }
 }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Perusahaanbt;
+use UxWeb\SweetAlert\SweetAlert;
 
 class PerusahaanController extends Controller
 {
@@ -24,6 +25,7 @@ class PerusahaanController extends Controller
         $data=Perusahaanbt::findOrFail($verify_id);
         $data->status = '1';
         $data->save();
+        alert()->success('Verifikasi berhasil!', 'Sukses');
         return back();
     }
 }

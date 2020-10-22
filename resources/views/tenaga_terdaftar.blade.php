@@ -29,6 +29,7 @@
     <link rel="stylesheet" href="{{asset('plugins/datatables-bs4/css/dataTables.bootstrap4.min.css')}}">
     <link rel="stylesheet" href="{{asset('plugins/datatables-responsive/css/responsive.bootstrap4.min.css')}}">
     <link rel="icon" href="{{ asset('favicon.ico') }}"/>
+    <script src="{{ asset('js/app.js') }}"></script>
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
@@ -167,6 +168,7 @@
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
+  @include('sweet::alert')
     <!-- Content Header (Page header) -->
     <div class="content-header">
       <div class="container-fluid">

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Tenagakerjabt;
+use UxWeb\SweetAlert\SweetAlert;
 
 class TenagaController extends Controller
 {
@@ -24,6 +25,7 @@ class TenagaController extends Controller
         $data=Tenagakerjabt::findOrFail($verify_id);
         $data->status = '1';
         $data->save();
+        alert()->success('Verifikasi berhasil!', 'Sukses');
         return back();
     }
 }

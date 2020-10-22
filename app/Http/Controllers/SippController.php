@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Sipp;
+use UxWeb\SweetAlert\SweetAlert;
 
 class SippController extends Controller
 {
@@ -25,6 +26,7 @@ class SippController extends Controller
         $sipp=Sipp::findOrFail($verify_id);
         $sipp->status = '1';
         $sipp->save();
+        alert()->success('Verifikasi berhasil!', 'Sukses');
         return back();
     }
 }
