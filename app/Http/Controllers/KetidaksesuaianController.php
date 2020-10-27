@@ -28,4 +28,13 @@ class KetidaksesuaianController extends Controller
         alert()->success('Verifikasi berhasil!', 'Sukses');
         return back();
     }
+
+    public function delete(Request $request){
+        $delete_id = $request->input('delete_id');
+
+        $data = Ketidaksesuaian::findOrFail($delete_id);
+        $data->delete();
+        alert()->success('Data berhasil terhapus!', 'Sukses');
+        return back();
+    }
 }

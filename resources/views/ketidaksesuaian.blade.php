@@ -223,10 +223,16 @@
                                       <td>{{ $data->alasan }}</td>
                                       @if($data->status == 0)
                                           <td>Belum Terverifikasi</td>
-                                          <td><a href="#" class="btn btn-primary verify" data-id="{{$data->ketidaksesuaianID}}">Verifikasi</a></td>
+                                          <td>
+                                              <a href="#" class="btn btn-primary verify" data-id="{{$data->ketidaksesuaianID}}">Verifikasi</a>
+                                              <a href="#" class="btn btn-danger delete" data-id="{{$data->ketidaksesuaianID}}">Hapus</a>
+                                          </td>
                                       @elseif($data->status == 1)
                                           <td>Terverifikasi</td>
-                                          <td><a href="#" class="btn btn-success" disabled>Terverifikasi</a></td>
+                                          <td>
+                                              <a href="#" class="btn btn-success" disabled>Terverifikasi</a>
+                                              <a href="#" class="btn btn-danger delete" data-id="{{$data->ketidaksesuaianID}}">Hapus</a>
+                                          </td>
                                       @endif
                                   </tr>
                               @endforeach
@@ -348,6 +354,13 @@
         $('#verifyModal').modal('show');
     });
 </script>
+<script>
+    $(document).on('click','.delete',function(){
+        var id=$(this).attr('data-id');
+        $('#del_id').val(id);
+        $('#deleteModal').modal('show');
+    });
+</script>
 <!--Modal-->
 <div id="verifyModal" class="modal modal-danger fade" tabindex="-1" role="dialog" aria-labelledby="custom-width-modalLabel" aria-hidden="true" style="display: none;">
     <div class="modal-dialog" style="width:55%;">
@@ -374,5 +387,32 @@
     </div>
 </div>
 <!--Modal-->
+
+<!--Delete Modal-->
+<div id="deleteModal" class="modal modal-danger fade" tabindex="-1" role="dialog" aria-labelledby="custom-width-modalLabel" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog" style="width:55%;">
+        <div class="modal-content">
+            <form action="{{url('/ketidaksesuaian/delete')}}" method="POST" class="remove-record-model">
+                {{ method_field('post') }}
+                {{ csrf_field() }}
+
+                <div class="modal-header">
+                    <h4 class="modal-title text-center" id="custom-width-modalLabel">Hapus</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                </div>
+                <div class="modal-body">
+                    <p>Apakah anda yakin ingin menghapus data ini?</p>
+                    <input type="hidden" name="delete_id" id="del_id">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger waves-effect" data-dismiss="modal">Batal</button>
+                    <button type="submit" class="btn btn-success waves-effect">Yakin</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+<!--Delete Modal-->
 </body>
 </html>

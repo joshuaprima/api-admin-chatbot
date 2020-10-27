@@ -50,4 +50,13 @@ class AkunController extends Controller
             }
         }
     }
+
+    public function delete(Request $request){
+        $delete_id = $request->input('delete_id');
+
+        $data = Resetakun::findOrFail($delete_id);
+        $data->delete();
+        alert()->success('Data berhasil terhapus!', 'Sukses');
+        return back();
+    }
 }

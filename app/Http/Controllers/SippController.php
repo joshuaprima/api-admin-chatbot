@@ -23,10 +23,19 @@ class SippController extends Controller
     public function verify(Request $request){
         $verify_id=$request->input('verify_id');
 
-        $sipp=Sipp::findOrFail($verify_id);
-        $sipp->status = '1';
-        $sipp->save();
+        $data=Sipp::findOrFail($verify_id);
+        $data->status = '1';
+        $data->save();
         alert()->success('Verifikasi berhasil!', 'Sukses');
+        return back();
+    }
+
+    public function delete(Request $request){
+        $delete_id = $request->input('delete_id');
+
+        $data = Sipp::findOrFail($delete_id);
+        $data->delete();
+        alert()->success('Data berhasil terhapus!', 'Sukses');
         return back();
     }
 }

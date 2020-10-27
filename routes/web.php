@@ -33,6 +33,11 @@ Route::post('/sipp/verify', '\App\Http\Controllers\SippController@verify');
 Route::post('/ketidaksesuaian/verify', '\App\Http\Controllers\KetidaksesuaianController@verify');
 Route::post('/perusahaan/verify', '\App\Http\Controllers\PerusahaanController@verify');
 Route::post('/tenaga/verify', '\App\Http\Controllers\TenagaController@verify');
+Route::post('/sipp/delete', '\App\Http\Controllers\SippController@delete');
+Route::post('/akun/delete', '\App\Http\Controllers\AkunController@delete');
+Route::post('/ketidaksesuaian/delete', '\App\Http\Controllers\KetidaksesuaianController@delete');
+Route::post('/perusahaan/delete', '\App\Http\Controllers\PerusahaanController@delete');
+Route::post('/tenaga/delete', '\App\Http\Controllers\TenagaController@delete');
 
 Auth::routes();
 
